@@ -1,0 +1,29 @@
+@mixin font($family, $size, $spacing, $height, $color) {
+  font-family: $family;
+  font-size: $size;
+  letter-spacing: $spacing;
+  line-height: $height;
+  color: $color;
+}
+
+@mixin btn {
+  display: inline-block;
+  padding: 15px 45px;
+  @include font($font-georgia, 1.0625rem, 0.06rem, 1.3, $color-text-btn);
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 100px;
+  background-color: $color-primary;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
+}
+
+.btn {
+  @include btn()
+}
+
